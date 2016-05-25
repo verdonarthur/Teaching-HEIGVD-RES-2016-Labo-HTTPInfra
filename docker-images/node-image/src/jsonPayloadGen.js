@@ -37,10 +37,53 @@ function generateStudent() {
     return students;
 }
 
+function genPlaName() {
+    var planetsName = ["Sun", "Kepler", "Earth", "Dagoba", "Coruscant", "Venus", "Jupiter", "Hoth"];
+
+    var idName = chance.integer({
+        min: 0,
+        max: planetsName.length-1
+    });
+    var rndNumber = chance.integer({
+        min: 1,
+        max: 9999
+    });
+
+    return planetsName[idName] + "-" + rndNumber;
+}
+
+function generatePlanet() {
+    var nbrOfPlanet = chance.integer({
+        min: 1,
+        max: 10
+    });
+
+    var planets = [];
+    for (var i = 0; i < nbrOfPlanet; i++) {
+        var minTemperature = chance.integer({
+            min: -270,
+            max: 1000
+        });
+        var maxTemperature = chance.integer({
+            min: minTemperature,
+            max: 1000
+        });
+
+        planets.push({
+            name: genPlaName(),
+            minTemperature: minTemperature,
+            maxTemperature: maxTemperature
+        });
+    }
+
+    console.log(planets);
+
+    return planets;
+}
 
 function generatePayload() {
 
-    return generateStudent();
+    return generatePlanet();
 }
 
 exports.generatePayload = generatePayload;
