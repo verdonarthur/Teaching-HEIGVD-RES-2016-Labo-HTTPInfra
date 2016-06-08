@@ -7,4 +7,4 @@ COPY src/ /var/www/html/
 # COPY config/php.ini /usr/local/etc/php/
 
 
-EXPOSE 8080
+EXPOSE 80
