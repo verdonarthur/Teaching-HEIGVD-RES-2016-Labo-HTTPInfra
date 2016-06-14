@@ -1,0 +1,3 @@
+./remove.bat
+
+./run.bat

@@ -6,5 +6,8 @@ COPY src/ /var/www/html/
 # COPY config/httpd.conf /usr/local/apache2/conf/httpd.conf
 # COPY config/php.ini /usr/local/etc/php/
 
+RUN apt-get update
+RUN apt-get install nano
 
-EXPOSE 80
+
+# EXPOSE 80
